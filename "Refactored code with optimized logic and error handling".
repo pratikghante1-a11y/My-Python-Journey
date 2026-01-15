@@ -1,0 +1,29 @@
+def analyze_marks(marks_list):
+    pass_count = 0
+    fail_count= 0
+    highest = marks_list [0]
+    lowest = marks_list [0]
+    for mark in marks_list:
+        
+        if mark >= 40:
+            pass_count += 1 
+        else:
+            fail_count += 1 
+            
+        if mark > highest:
+            highest = mark 
+        if mark < lowest:
+            lowest = mark
+            
+        average = sum(marks_list) / len(marks_list)
+        
+    return {
+        "Pass Students": pass_count,
+        "Fail Students": fail_count,
+        "Average": average,
+        "Highest": highest,
+        "Lowest": lowest,
+}
+marks = [ 35, 67, 80, 23, 45, 50 ]
+result = analyze_marks(marks)
+print(result)
